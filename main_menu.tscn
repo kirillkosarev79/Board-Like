@@ -1,0 +1,741 @@
+[gd_scene load_steps=28 format=3 uid="uid://dhpe5uuolk77j"]
+
+[ext_resource type="Script" uid="uid://bh135fa0j8yb4" path="res://background.gd" id="1_8u0te"]
+[ext_resource type="AudioStream" uid="uid://b4lvc2whw7ovf" path="res://Sounds/mainmenumusic.wav" id="2_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://bkn33aoldj0l4" path="res://textures/mainbg.png" id="2_oiatc"]
+[ext_resource type="Texture2D" uid="uid://bm6w22ehkn6pq" path="res://textures/menubutton1.png" id="4_glbon"]
+[ext_resource type="FontFile" uid="uid://e77sgwqcrvek" path="res://LakkiReddy-Regular.ttf" id="5_glbon"]
+[ext_resource type="Texture2D" uid="uid://b0adfopo34v7r" path="res://textures/menubutton0.png" id="5_nlkkf"]
+[ext_resource type="Script" uid="uid://dua6xsubvfsj5" path="res://playmm.gd" id="5_qe12f"]
+[ext_resource type="Script" uid="uid://f332if6h2aew" path="res://buttonsettings.gd" id="7_8qtwp"]
+[ext_resource type="Script" uid="uid://ba2vsmqn8oydp" path="res://quit.gd" id="7_qe12f"]
+[ext_resource type="Script" uid="uid://b8owux4t4jp67" path="res://settings.gd" id="9_g8g3n"]
+[ext_resource type="Script" uid="uid://bhhd6qr0hrpnb" path="res://backsettings.gd" id="10_8u0te"]
+[ext_resource type="Texture2D" uid="uid://bua5tuu5al4eg" path="res://textures/minicog.png" id="11_oiatc"]
+[ext_resource type="Script" uid="uid://dml3cbhpny3j0" path="res://minidice.gd" id="12_mg3m2"]
+[ext_resource type="Texture2D" uid="uid://dwtrda822vumi" path="res://textures/minidice.png" id="13_ojb7r"]
+[ext_resource type="Script" uid="uid://cj8r5lwy3m6wp" path="res://consolesetting.gd" id="14_e5qqf"]
+[ext_resource type="Script" uid="uid://bobr3kd8uqyjr" path="res://volumeslider.gd" id="15_7bbuq"]
+[ext_resource type="Texture2D" uid="uid://dxbq0d4vim70w" path="res://textures/return.png" id="16_saq78"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nlkkf"]
+font_size = 60
+font_color = Color(0.5345904, 0.7764005, 0.9168499, 1)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8uw0o"]
+bg_color = Color(0.64705884, 0.5529412, 0.5372549, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 20
+
+[sub_resource type="DPITexture" id="DPITexture_ql5ya"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#fff\" fill-opacity=\".75\" rx=\"7\"/><circle cx=\"24\" cy=\"8\" r=\"5\" fill=\"#1a1a1a\"/></svg>
+"
+base_scale = 2.93
+
+[sub_resource type="DPITexture" id="DPITexture_ka3nr"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><g fill-opacity=\".5\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#1a1a1a\" rx=\"7\"/><circle cx=\"8\" cy=\"8\" r=\"5\" fill=\"#fff\"/></g></svg>
+"
+base_scale = 2.91
+
+[sub_resource type="DPITexture" id="DPITexture_48knj"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\" fill-opacity=\".75\"/></svg>
+"
+base_scale = 1.46
+
+[sub_resource type="DPITexture" id="DPITexture_m2y5l"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\"/></svg>
+"
+base_scale = 1.49
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_imjy1"]
+thickness = 8
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_u5051"]
+thickness = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v2sba"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ai24q"]
+bg_color = Color(0.64705884, 0.5529412, 0.5372549, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.96500003
+offset_bottom = 37.799927
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2858076, 0.28832293, 1, 1)
+script = ExtResource("1_8u0te")
+
+[node name="Minidice" type="Sprite2D" parent="Background"]
+position = Vector2(103, 109)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice2" type="Sprite2D" parent="Background"]
+position = Vector2(247, 305)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice3" type="Sprite2D" parent="Background"]
+position = Vector2(674, 466)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice4" type="Sprite2D" parent="Background"]
+position = Vector2(175, 917)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice5" type="Sprite2D" parent="Background"]
+position = Vector2(520, 980)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice6" type="Sprite2D" parent="Background"]
+position = Vector2(931, 588)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice7" type="Sprite2D" parent="Background"]
+position = Vector2(458, 682)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice8" type="Sprite2D" parent="Background"]
+position = Vector2(1236, 396)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice9" type="Sprite2D" parent="Background"]
+position = Vector2(1192, 980)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice10" type="Sprite2D" parent="Background"]
+position = Vector2(1280, 607)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice11" type="Sprite2D" parent="Background"]
+position = Vector2(684, 682)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice12" type="Sprite2D" parent="Background"]
+position = Vector2(392, 491)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice13" type="Sprite2D" parent="Background"]
+position = Vector2(1493, 525)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice14" type="Sprite2D" parent="Background"]
+position = Vector2(1622, 127)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice15" type="Sprite2D" parent="Background"]
+texture_filter = 1
+position = Vector2(1807, 258)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice16" type="Sprite2D" parent="Background"]
+position = Vector2(1773, 936)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice17" type="Sprite2D" parent="Background"]
+position = Vector2(414, 839)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice18" type="Sprite2D" parent="Background"]
+position = Vector2(1186, 792)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice19" type="Sprite2D" parent="Background"]
+position = Vector2(834, 1030)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice20" type="Sprite2D" parent="Background"]
+position = Vector2(953, 353)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice21" type="Sprite2D" parent="Background"]
+position = Vector2(81, 739)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice22" type="Sprite2D" parent="Background"]
+position = Vector2(624, 315)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice23" type="Sprite2D" parent="Background"]
+position = Vector2(294, 1024)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice24" type="Sprite2D" parent="Background"]
+position = Vector2(68, 445)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice25" type="Sprite2D" parent="Background"]
+position = Vector2(618, 865)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice26" type="Sprite2D" parent="Background"]
+position = Vector2(266, 779)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice27" type="Sprite2D" parent="Background"]
+position = Vector2(1794, 81)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice28" type="Sprite2D" parent="Background"]
+position = Vector2(1682, 798)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice29" type="Sprite2D" parent="Background"]
+position = Vector2(1098, 515)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice30" type="Sprite2D" parent="Background"]
+position = Vector2(1083, 279)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice31" type="Sprite2D" parent="Background"]
+position = Vector2(396, 300)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice32" type="Sprite2D" parent="Background"]
+position = Vector2(816, 269)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice33" type="Sprite2D" parent="Background"]
+position = Vector2(408, 20)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice34" type="Sprite2D" parent="Background"]
+position = Vector2(1275, 15)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice35" type="Sprite2D" parent="Background"]
+position = Vector2(1041, 165)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice36" type="Sprite2D" parent="Background"]
+position = Vector2(624, 121)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice37" type="Sprite2D" parent="Background"]
+position = Vector2(232, 557)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice38" type="Sprite2D" parent="Background"]
+position = Vector2(1340, 468)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice39" type="Sprite2D" parent="Background"]
+position = Vector2(1456, 680)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice40" type="Sprite2D" parent="Background"]
+position = Vector2(881, 768)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice41" type="Sprite2D" parent="Background"]
+position = Vector2(1477, 985)
+scale = Vector2(1, 1.2749976)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice42" type="Sprite2D" parent="Background"]
+position = Vector2(1426, 845)
+scale = Vector2(1, 1.2749976)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice43" type="Sprite2D" parent="Background"]
+position = Vector2(1728, 613)
+scale = Vector2(1, 1.2749976)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice44" type="Sprite2D" parent="Background"]
+position = Vector2(1370, 205)
+scale = Vector2(1, 1.2749976)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice45" type="Sprite2D" parent="Background"]
+position = Vector2(1659, 406)
+scale = Vector2(1, 1.2749976)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice46" type="Sprite2D" parent="Background"]
+position = Vector2(1519, 279.00003)
+scale = Vector2(1, 1.2749976)
+texture = ExtResource("2_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_7vrkn")
+autoplay = true
+
+[node name="Play" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 656.0
+offset_top = 424.0
+offset_right = 1256.0
+offset_bottom = 534.0
+texture_normal = ExtResource("4_glbon")
+texture_pressed = ExtResource("5_nlkkf")
+script = ExtResource("5_qe12f")
+
+[node name="Label" type="Label" parent="Play"]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 600.0
+offset_bottom = 118.0
+theme_override_fonts/font = ExtResource("5_glbon")
+text = "Play"
+label_settings = SubResource("LabelSettings_nlkkf")
+horizontal_alignment = 1
+vertical_alignment = 2
+uppercase = true
+
+[node name="SettingsB" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 656.0
+offset_top = 584.0
+offset_right = 1256.0
+offset_bottom = 694.0
+texture_normal = ExtResource("4_glbon")
+texture_pressed = ExtResource("5_nlkkf")
+script = ExtResource("7_8qtwp")
+
+[node name="Label" type="Label" parent="SettingsB"]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 600.0
+offset_bottom = 118.0
+theme_override_fonts/font = ExtResource("5_glbon")
+text = "Settings"
+label_settings = SubResource("LabelSettings_nlkkf")
+horizontal_alignment = 1
+vertical_alignment = 2
+uppercase = true
+
+[node name="Quit" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 656.0
+offset_top = 744.0
+offset_right = 1256.0
+offset_bottom = 854.0
+texture_normal = ExtResource("4_glbon")
+texture_pressed = ExtResource("5_nlkkf")
+script = ExtResource("7_qe12f")
+
+[node name="Label" type="Label" parent="Quit"]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 600.0
+offset_bottom = 118.0
+theme_override_fonts/font = ExtResource("5_glbon")
+text = "Quit"
+label_settings = SubResource("LabelSettings_nlkkf")
+horizontal_alignment = 1
+vertical_alignment = 2
+uppercase = true
+
+[node name="Settings" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_g8g3n")
+
+[node name="Background" type="ColorRect" parent="Settings"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.96500003
+offset_bottom = 37.799927
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2858076, 0.28832293, 1, 1)
+script = ExtResource("10_8u0te")
+
+[node name="Minidice" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(103, 109)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice2" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(247, 305)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice3" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(674, 466)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice4" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(175, 917)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice5" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(520, 980)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice6" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(931, 588)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice7" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(458, 682)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice8" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(1236, 396)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice9" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(1192, 980)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice10" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(1280, 607)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice11" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(684, 682)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice12" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(392, 491)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice13" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(1493, 525)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice14" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(1622, 127)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice15" type="Sprite2D" parent="Settings/Background"]
+texture_filter = 1
+position = Vector2(1807, 258)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice16" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(1773, 936)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice17" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(414, 839)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice18" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(1186, 792)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice19" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(834, 1030)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice20" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(953, 353)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice21" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(81, 739)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice22" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(624, 315)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice23" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(294, 1024)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice24" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(68, 445)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice25" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(618, 865)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice26" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(266, 779)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice27" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(1794, 81)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice28" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(1682, 798)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice29" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(1098, 515)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice30" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(1083, 279)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice31" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(396, 300)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice32" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(816, 269)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice33" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(408, 20)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice34" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(1275, 15)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice35" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(1041, 165)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice36" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(624, 121)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice37" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(652, 219)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice38" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(1340, 468)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice39" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(1456, 680)
+texture = ExtResource("11_oiatc")
+script = ExtResource("12_mg3m2")
+
+[node name="Minidice40" type="Sprite2D" parent="Settings/Background"]
+position = Vector2(881, 768)
+texture = ExtResource("13_ojb7r")
+script = ExtResource("12_mg3m2")
+
+[node name="ColorRect" type="Panel" parent="Settings"]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 160.0
+offset_right = 1472.0
+offset_bottom = 886.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8uw0o")
+
+[node name="CheckButton" type="CheckButton" parent="Settings/ColorRect"]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 411.0
+offset_right = 986.0
+offset_bottom = 499.0
+focus_mode = 0
+theme_override_colors/font_color = Color(0.111196615, 0.11119693, 0.11119672, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_constants/h_separation = 300
+theme_override_fonts/font = ExtResource("5_glbon")
+theme_override_font_sizes/font_size = 48
+theme_override_constants/check_v_offset = -12
+theme_override_icons/checked = SubResource("DPITexture_ql5ya")
+theme_override_icons/unchecked = SubResource("DPITexture_ka3nr")
+text = " Console (TAB)"
+script = ExtResource("14_e5qqf")
+
+[node name="Line2D" type="Line2D" parent="Settings/ColorRect/CheckButton"]
+position = Vector2(43.358486, 5)
+scale = Vector2(0.9132946, 1)
+points = PackedVector2Array(309, 28, 818, 28)
+width = 2.0
+default_color = Color(0, 0, 0, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="HSlider" type="HSlider" parent="Settings/ColorRect"]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 237.0
+offset_right = 870.0
+offset_bottom = 347.0
+theme_override_icons/grabber = SubResource("DPITexture_48knj")
+theme_override_icons/grabber_highlight = SubResource("DPITexture_m2y5l")
+theme_override_styles/slider = SubResource("StyleBoxLine_imjy1")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_u5051")
+value = 100.0
+script = ExtResource("15_7bbuq")
+
+[node name="Label" type="Label" parent="Settings/ColorRect/HSlider"]
+layout_mode = 0
+offset_left = 202.0
+offset_top = -24.0
+offset_right = 473.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_glbon")
+theme_override_font_sizes/font_size = 48
+text = "Volume"
+horizontal_alignment = 1
+
+[node name="VolumeLabel" type="Label" parent="Settings/ColorRect/HSlider"]
+layout_mode = 0
+offset_left = 634.0
+offset_top = 75.0
+offset_right = 689.0
+offset_bottom = 130.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.6784314)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_v2sba")
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Settings"]
+layout_mode = 0
+offset_left = 735.0
+offset_top = 35.0
+offset_right = 1156.0
+offset_bottom = 213.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_glbon")
+theme_override_font_sizes/font_size = 86
+theme_override_styles/normal = SubResource("StyleBoxFlat_ai24q")
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 2
+clip_text = true
+
+[node name="CloseSettings" type="TextureButton" parent="Settings"]
+layout_mode = 0
+offset_left = 1726.0
+offset_top = 27.0
+offset_right = 1872.0
+offset_bottom = 173.0
+texture_normal = ExtResource("16_saq78")
+ignore_texture_size = true
+stretch_mode = 4
+
+[connection signal="pressed" from="Play" to="Play" method="_on_play"]
+[connection signal="pressed" from="SettingsB" to="SettingsB" method="_on_pressed"]
+[connection signal="pressed" from="Quit" to="Quit" method="_on_pressed"]
+[connection signal="drag_ended" from="Settings/ColorRect/HSlider" to="Settings/ColorRect/HSlider" method="notdrag"]
+[connection signal="drag_started" from="Settings/ColorRect/HSlider" to="Settings/ColorRect/HSlider" method="drag"]
+[connection signal="value_changed" from="Settings/ColorRect/HSlider" to="Settings/ColorRect/HSlider" method="_on_value_changed"]
+[connection signal="pressed" from="Settings/CloseSettings" to="Settings" method="close_pressed"]

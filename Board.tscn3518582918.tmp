@@ -1,0 +1,1000 @@
+[gd_scene load_steps=50 format=3 uid="uid://c05ffauq0okle"]
+
+[ext_resource type="Script" uid="uid://bh135fa0j8yb4" path="res://background.gd" id="2_1ls6n"]
+[ext_resource type="Texture2D" uid="uid://dwtrda822vumi" path="res://textures/minidice.png" id="3_ruwd8"]
+[ext_resource type="Script" uid="uid://dc6aas1ms7rpj" path="res://tiles.gd" id="4_36lgi"]
+[ext_resource type="Script" uid="uid://dml3cbhpny3j0" path="res://minidice.gd" id="4_k5qkh"]
+[ext_resource type="Script" uid="uid://csdjhvr8hyxic" path="res://final_tile.gd" id="5_4rfqf"]
+[ext_resource type="Texture2D" uid="uid://dfxngstsismrq" path="res://textures/RollButtonPressed.png" id="5_6pldg"]
+[ext_resource type="Texture2D" uid="uid://lhmbhwmli8tc" path="res://textures/tiles/final tile.png" id="5_k0g80"]
+[ext_resource type="Script" uid="uid://pfu04rcldbpr" path="res://portal.gd" id="6_tehwd"]
+[ext_resource type="Texture2D" uid="uid://bfmpgsv5mgkyl" path="res://textures/portal/portal0.png" id="7_4rfqf"]
+[ext_resource type="Script" uid="uid://b0u6ok6scsf43" path="res://roll_button.gd" id="7_vewne"]
+[ext_resource type="Texture2D" uid="uid://gfd20wlgy6rt" path="res://textures/portal/portal1.png" id="8_oosk6"]
+[ext_resource type="Script" uid="uid://drp4fqqlppjsu" path="res://Board.gd" id="9_ek5gj"]
+[ext_resource type="Texture2D" uid="uid://b61byx138f6a7" path="res://textures/portal/portal2.png" id="9_fqotv"]
+[ext_resource type="Script" uid="uid://cb1mtgokeip0f" path="res://apply_shader.gd" id="9_lx2b6"]
+[ext_resource type="AudioStream" uid="uid://kng1irqavbvq" path="res://Sounds/RullButtonSound.mp3" id="9_ys3rr"]
+[ext_resource type="Shader" uid="uid://cgaamwi5crbpa" path="res://shades.gdshader" id="10_lx2b6"]
+[ext_resource type="Texture2D" uid="uid://c1xsu8edpyd3t" path="res://textures/portal/portal3.png" id="10_xasab"]
+[ext_resource type="Texture2D" uid="uid://c2w8rjmtxui6m" path="res://textures/RollButtonold.png" id="20_ek5gj"]
+[ext_resource type="AudioStream" uid="uid://b2t7i4t6ipxg7" path="res://Sounds/melody1.wav" id="20_fqotv"]
+[ext_resource type="Script" uid="uid://comp6mm3lpcle" path="res://players.gd" id="20_xasab"]
+[ext_resource type="Script" uid="uid://dvxdvjx3ta5nv" path="res://audio_stream_player_2d.gd" id="21_fqotv"]
+[ext_resource type="Script" uid="uid://bodywb1fxqcrg" path="res://cards.gd" id="22_xasab"]
+[ext_resource type="Script" uid="uid://b6xp01bqw8tc2" path="res://stats.gd" id="23_ev0l5"]
+[ext_resource type="Script" uid="uid://0ap4wxv3j7xo" path="res://abils.gd" id="23_r2qbv"]
+[ext_resource type="Texture2D" uid="uid://d2gpryis2w7ku" path="res://textures/confirmbutton0.png" id="24_2y2a4"]
+[ext_resource type="Script" uid="uid://crxyf5bfog5nj" path="res://main_button.gd" id="24_ev0l5"]
+[ext_resource type="Texture2D" uid="uid://rok5beqo78m8" path="res://textures/confirmbutton1.png" id="25_c31rc"]
+[ext_resource type="FontFile" uid="uid://e77sgwqcrvek" path="res://LakkiReddy-Regular.ttf" id="30_k5qkh"]
+[ext_resource type="Texture2D" uid="uid://d0ay47wybfvj3" path="res://textures/stat_bar/stat_bar0.png" id="31_k0yo6"]
+[ext_resource type="Script" uid="uid://c22ebluwe7vrj" path="res://round_label.gd" id="31_lx2b6"]
+[ext_resource type="Script" uid="uid://cmes7in26alxs" path="res://stat_bar.gd" id="32_8ttln"]
+[ext_resource type="AudioStream" uid="uid://d0g3pn54ibnt" path="res://Sounds/cardsound2.mp3" id="32_lx2b6"]
+[ext_resource type="Texture2D" uid="uid://cbgpgamuw8ufm" path="res://textures/menuedgeleft.png" id="34_kms6e"]
+[ext_resource type="Texture2D" uid="uid://sjgcn704863i" path="res://textures/menuedgeright.png" id="35_vumgu"]
+[ext_resource type="Script" uid="uid://c50kwy5w7f0fq" path="res://choicemenu.gd" id="36_ek5gj"]
+[ext_resource type="Texture2D" uid="uid://cic2e2wdxm6dt" path="res://textures/choicebar.png" id="37_vumgu"]
+[ext_resource type="Script" uid="uid://ycfii1y5sq6l" path="res://options.gd" id="38_1ls6n"]
+[ext_resource type="Texture2D" uid="uid://cdkm4as6deepx" path="res://textures/cancel.png" id="38_vumgu"]
+[ext_resource type="Script" uid="uid://cue2h7je7b76k" path="res://cancel_button.gd" id="39_1ls6n"]
+
+[sub_resource type="Animation" id="Animation_ev0l5"]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TurnChangeAnim/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 2.9333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TurnChangeAnim/ColorRect:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [100]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TurnChangeAnim/TurnChangeLabel:z_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [101]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TurnChangeAnim/TurnChangeLabel:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_r2qbv"]
+resource_name = "turn_change"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TurnChangeAnim/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.07, 0.96666664, 1.99),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 0.6117647), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TurnChangeAnim/ColorRect:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [100]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TurnChangeAnim/TurnChangeLabel:z_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [101]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TurnChangeAnim/TurnChangeLabel:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.98, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bkwmh"]
+_data = {
+&"RESET": SubResource("Animation_ev0l5"),
+&"turn_change": SubResource("Animation_r2qbv")
+}
+
+[sub_resource type="FontFile" id="FontFile_r2qbv"]
+cache/0/128/0/ascent = 0.0
+cache/0/128/0/descent = 0.0
+cache/0/128/0/underline_position = 0.0
+cache/0/128/0/underline_thickness = 0.0
+cache/0/128/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kms6e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vumgu"]
+shader = ExtResource("10_lx2b6")
+shader_parameter/debug = false
+shader_parameter/border_scale = 1.0
+shader_parameter/shadow_offset = Vector2(-20, -20)
+shader_parameter/color = Color(0, 0, 0, 0.52156866)
+shader_parameter/blur_amount = 0.0
+shader_parameter/shadow_scale = 1.0
+shader_parameter/disable_rotating = false
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r2qbv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_4rfqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_oosk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fqotv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xasab")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 7.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ev0l5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_4rfqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_oosk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fqotv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xasab")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k5qkh"]
+shader = ExtResource("10_lx2b6")
+shader_parameter/debug = false
+shader_parameter/border_scale = 2.0
+shader_parameter/shadow_offset = Vector2(-10, -10)
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/blur_amount = 0.0
+shader_parameter/shadow_scale = 1.5
+shader_parameter/disable_rotating = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1ls6n"]
+shader = ExtResource("10_lx2b6")
+shader_parameter/debug = false
+shader_parameter/border_scale = 1.0
+shader_parameter/shadow_offset = Vector2(-10, -10)
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/blur_amount = 0.0
+shader_parameter/shadow_scale = 1.2
+shader_parameter/disable_rotating = false
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("9_lx2b6")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.96500003
+offset_bottom = 37.799927
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2858076, 0.28832293, 1, 1)
+script = ExtResource("2_1ls6n")
+
+[node name="Minidice" type="Sprite2D" parent="Background"]
+position = Vector2(103, 109)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice2" type="Sprite2D" parent="Background"]
+position = Vector2(247, 305)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice3" type="Sprite2D" parent="Background"]
+position = Vector2(674, 466)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice4" type="Sprite2D" parent="Background"]
+position = Vector2(175, 917)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice5" type="Sprite2D" parent="Background"]
+position = Vector2(520, 980)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice6" type="Sprite2D" parent="Background"]
+position = Vector2(931, 588)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice7" type="Sprite2D" parent="Background"]
+position = Vector2(458, 682)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice8" type="Sprite2D" parent="Background"]
+position = Vector2(1236, 396)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice9" type="Sprite2D" parent="Background"]
+position = Vector2(1192, 980)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice10" type="Sprite2D" parent="Background"]
+position = Vector2(1280, 607)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice11" type="Sprite2D" parent="Background"]
+position = Vector2(684, 682)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice12" type="Sprite2D" parent="Background"]
+position = Vector2(392, 491)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice13" type="Sprite2D" parent="Background"]
+position = Vector2(1493, 525)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice14" type="Sprite2D" parent="Background"]
+position = Vector2(1622, 127)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice15" type="Sprite2D" parent="Background"]
+texture_filter = 1
+position = Vector2(1807, 258)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice16" type="Sprite2D" parent="Background"]
+position = Vector2(1773, 936)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice17" type="Sprite2D" parent="Background"]
+position = Vector2(414, 839)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice18" type="Sprite2D" parent="Background"]
+position = Vector2(1186, 792)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice19" type="Sprite2D" parent="Background"]
+position = Vector2(834, 1030)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice20" type="Sprite2D" parent="Background"]
+position = Vector2(953, 353)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice21" type="Sprite2D" parent="Background"]
+position = Vector2(81, 739)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice22" type="Sprite2D" parent="Background"]
+position = Vector2(624, 315)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice23" type="Sprite2D" parent="Background"]
+position = Vector2(294, 1024)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice24" type="Sprite2D" parent="Background"]
+position = Vector2(68, 445)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice25" type="Sprite2D" parent="Background"]
+position = Vector2(618, 865)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice26" type="Sprite2D" parent="Background"]
+position = Vector2(266, 779)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice27" type="Sprite2D" parent="Background"]
+position = Vector2(1794, 81)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice28" type="Sprite2D" parent="Background"]
+position = Vector2(1682, 798)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice29" type="Sprite2D" parent="Background"]
+position = Vector2(1098, 515)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice30" type="Sprite2D" parent="Background"]
+position = Vector2(1083, 279)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice31" type="Sprite2D" parent="Background"]
+position = Vector2(396, 300)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice32" type="Sprite2D" parent="Background"]
+position = Vector2(816, 269)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice33" type="Sprite2D" parent="Background"]
+position = Vector2(408, 20)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice34" type="Sprite2D" parent="Background"]
+position = Vector2(1275, 15)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice35" type="Sprite2D" parent="Background"]
+position = Vector2(1041, 165)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice36" type="Sprite2D" parent="Background"]
+position = Vector2(624, 121)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice37" type="Sprite2D" parent="Background"]
+position = Vector2(652, 219)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice38" type="Sprite2D" parent="Background"]
+position = Vector2(1340, 468)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice39" type="Sprite2D" parent="Background"]
+position = Vector2(1456, 680)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice40" type="Sprite2D" parent="Background"]
+position = Vector2(881, 768)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice41" type="Sprite2D" parent="Background"]
+position = Vector2(1346, 151)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice42" type="Sprite2D" parent="Background"]
+position = Vector2(1423, 269)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice43" type="Sprite2D" parent="Background"]
+position = Vector2(1822, 384)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice44" type="Sprite2D" parent="Background"]
+position = Vector2(1867, 648)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice45" type="Sprite2D" parent="Background"]
+position = Vector2(1475, 851)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Minidice46" type="Sprite2D" parent="Background"]
+position = Vector2(1597, 1022)
+texture = ExtResource("3_ruwd8")
+script = ExtResource("4_k5qkh")
+
+[node name="Board" type="Node2D" parent="."]
+unique_name_in_owner = true
+scale = Vector2(0.7, 0.7)
+script = ExtResource("9_ek5gj")
+
+[node name="TurnChangeAnim" type="AnimationPlayer" parent="Board"]
+libraries = {
+&"": SubResource("AnimationLibrary_bkwmh")
+}
+
+[node name="ColorRect" type="ColorRect" parent="Board/TurnChangeAnim"]
+z_index = 100
+offset_left = 2.0
+offset_right = 1926.0
+offset_bottom = 1076.0
+color = Color(0, 0, 0, 0)
+
+[node name="TurnChangeLabel" type="Label" parent="Board/TurnChangeAnim"]
+modulate = Color(0, 0, 0, 0)
+z_index = 101
+anchors_preset = -1
+anchor_left = -0.004
+anchor_right = -0.004
+offset_left = 6.6800003
+offset_top = -40.0
+offset_right = 1932.68
+offset_bottom = 1036.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontFile_r2qbv")
+theme_override_font_sizes/font_size = 128
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Tiles" type="Node2D" parent="Board"]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Tile1" type="TextureButton" parent="Board/Tiles"]
+texture_filter = 2
+material = SubResource("ShaderMaterial_kms6e")
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 758.5715
+offset_top = 488.57153
+offset_right = 951.5715
+offset_bottom = 748.57153
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("4_36lgi")
+metadata/_edit_use_anchors_ = true
+
+[node name="Tile2" type="TextureButton" parent="Board/Tiles"]
+material = SubResource("ShaderMaterial_vumgu")
+script = ExtResource("4_36lgi")
+metadata/_edit_use_anchors_ = true
+
+[node name="Tile3" type="TextureButton" parent="Board/Tiles"]
+material = SubResource("ShaderMaterial_kms6e")
+script = ExtResource("4_36lgi")
+metadata/_edit_use_anchors_ = true
+
+[node name="Tile4" type="TextureButton" parent="Board/Tiles"]
+material = SubResource("ShaderMaterial_kms6e")
+script = ExtResource("4_36lgi")
+metadata/_edit_use_anchors_ = true
+
+[node name="Tile5" type="TextureButton" parent="Board/Tiles"]
+material = SubResource("ShaderMaterial_kms6e")
+script = ExtResource("4_36lgi")
+metadata/_edit_use_anchors_ = true
+
+[node name="Tile6" type="TextureButton" parent="Board/Tiles"]
+material = SubResource("ShaderMaterial_kms6e")
+script = ExtResource("4_36lgi")
+metadata/_edit_use_anchors_ = true
+
+[node name="Tile7" type="TextureButton" parent="Board/Tiles"]
+material = SubResource("ShaderMaterial_kms6e")
+script = ExtResource("4_36lgi")
+metadata/_edit_use_anchors_ = true
+
+[node name="Tile8" type="TextureButton" parent="Board/Tiles"]
+material = SubResource("ShaderMaterial_kms6e")
+script = ExtResource("4_36lgi")
+metadata/_edit_use_anchors_ = true
+
+[node name="Tile9" type="TextureButton" parent="Board/Tiles"]
+material = SubResource("ShaderMaterial_kms6e")
+script = ExtResource("4_36lgi")
+metadata/_edit_use_anchors_ = true
+
+[node name="Tile12" type="TextureButton" parent="Board/Tiles"]
+material = SubResource("ShaderMaterial_kms6e")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_36lgi")
+metadata/_edit_use_anchors_ = true
+
+[node name="Tile13" type="TextureButton" parent="Board/Tiles"]
+material = SubResource("ShaderMaterial_kms6e")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_36lgi")
+metadata/_edit_use_anchors_ = true
+
+[node name="Tile14" type="TextureButton" parent="Board/Tiles"]
+material = SubResource("ShaderMaterial_kms6e")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_36lgi")
+metadata/_edit_use_anchors_ = true
+
+[node name="Tile15" type="TextureButton" parent="Board/Tiles"]
+material = SubResource("ShaderMaterial_kms6e")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_36lgi")
+metadata/_edit_use_anchors_ = true
+
+[node name="Tile16" type="TextureButton" parent="Board/Tiles"]
+material = SubResource("ShaderMaterial_kms6e")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_36lgi")
+metadata/_edit_use_anchors_ = true
+
+[node name="Tile17" type="TextureButton" parent="Board/Tiles"]
+material = SubResource("ShaderMaterial_kms6e")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_36lgi")
+metadata/_edit_use_anchors_ = true
+
+[node name="Tile18" type="TextureButton" parent="Board/Tiles"]
+material = SubResource("ShaderMaterial_kms6e")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_36lgi")
+metadata/_edit_use_anchors_ = true
+
+[node name="Tile19" type="TextureButton" parent="Board/Tiles"]
+material = SubResource("ShaderMaterial_kms6e")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_36lgi")
+metadata/_edit_use_anchors_ = true
+
+[node name="Tile20" type="TextureButton" parent="Board/Tiles"]
+material = SubResource("ShaderMaterial_kms6e")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_36lgi")
+metadata/_edit_use_anchors_ = true
+
+[node name="DiceLabel" type="Label" parent="Board"]
+offset_left = 987.14294
+offset_top = 1012.8574
+offset_right = 1185.2382
+offset_bottom = 1070.0004
+scale = Vector2(3, 3)
+text = "Roll: ?"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="FinalTile" type="Sprite2D" parent="Board"]
+position = Vector2(2448.5718, 832.85693)
+scale = Vector2(3, 3)
+texture = ExtResource("5_k0g80")
+script = ExtResource("5_4rfqf")
+
+[node name="Portal" type="Node2D" parent="Board"]
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("6_tehwd")
+
+[node name="PortalEntrance" type="AnimatedSprite2D" parent="Board/Portal"]
+modulate = Color(1.8916494, 1.8916494, 1.8916494, 1)
+position = Vector2(2228.572, 500)
+sprite_frames = SubResource("SpriteFrames_r2qbv")
+animation = &"spin"
+
+[node name="PortalExit" type="AnimatedSprite2D" parent="Board/Portal"]
+modulate = Color(2.2639842, 2.2639842, 2.2639842, 1)
+position = Vector2(308.57147, 834.2858)
+sprite_frames = SubResource("SpriteFrames_ev0l5")
+animation = &"spin"
+
+[node name="RollButton" type="TextureButton" parent="Board"]
+offset_left = 1794.2858
+offset_top = 1001.4286
+offset_right = 2347.143
+offset_bottom = 1438.571
+texture_normal = ExtResource("20_ek5gj")
+texture_pressed = ExtResource("5_6pldg")
+stretch_mode = 5
+script = ExtResource("7_vewne")
+
+[node name="RollButtonPressed" type="AudioStreamPlayer" parent="Board/RollButton"]
+stream = ExtResource("9_ys3rr")
+
+[node name="Start" type="Sprite2D" parent="Board"]
+position = Vector2(250, 500)
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="Board"]
+stream = ExtResource("20_fqotv")
+volume_db = 6.5
+script = ExtResource("21_fqotv")
+
+[node name="MainButton" type="TextureButton" parent="Board"]
+offset_left = 1097.143
+offset_top = 1142.8572
+offset_right = 1462.8572
+offset_bottom = 1325.7144
+texture_normal = ExtResource("24_2y2a4")
+texture_pressed = ExtResource("25_c31rc")
+texture_disabled = ExtResource("25_c31rc")
+script = ExtResource("24_ev0l5")
+
+[node name="Players" type="Sprite2D" parent="Board"]
+script = ExtResource("20_xasab")
+
+[node name="Cards" type="Control" parent="Board"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -2.1798269e-05
+offset_top = -4.3596538e-05
+offset_right = 39.999977
+offset_bottom = 39.999958
+script = ExtResource("22_xasab")
+
+[node name="Card1" type="TextureButton" parent="Board/Cards"]
+layout_mode = 0
+offset_left = 52.85717
+offset_top = 1111.4288
+offset_right = 178.57147
+offset_bottom = 1208.5717
+script = ExtResource("23_r2qbv")
+
+[node name="cardDescription" type="Label" parent="Board/Cards/Card1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.85714
+offset_top = 51.42857
+offset_right = 32.857132
+offset_bottom = 51.428574
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("30_k5qkh")
+theme_override_font_sizes/font_size = 26
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Card2" type="TextureButton" parent="Board/Cards"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 1111.429
+offset_right = 425.7143
+offset_bottom = 1208.5718
+script = ExtResource("23_r2qbv")
+
+[node name="cardDescription" type="Label" parent="Board/Cards/Card2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.85714
+offset_top = 51.42857
+offset_right = 32.857132
+offset_bottom = 51.428574
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("30_k5qkh")
+theme_override_font_sizes/font_size = 26
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Card3" type="TextureButton" parent="Board/Cards"]
+layout_mode = 0
+offset_left = 550.0
+offset_top = 1111.429
+offset_right = 675.7143
+offset_bottom = 1208.5718
+script = ExtResource("23_r2qbv")
+
+[node name="cardDescription" type="Label" parent="Board/Cards/Card3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.85714
+offset_top = 51.42857
+offset_right = 32.857132
+offset_bottom = 51.428574
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("30_k5qkh")
+theme_override_font_sizes/font_size = 26
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Stats" type="Node2D" parent="Board"]
+script = ExtResource("23_ev0l5")
+
+[node name="statbar0" type="Sprite2D" parent="Board/Stats"]
+material = SubResource("ShaderMaterial_k5qkh")
+instance_shader_parameters/brightness = 1.4901200051653518e-08
+position = Vector2(385.7143, 178.57144)
+scale = Vector2(0.7206958, 0.8360498)
+texture = ExtResource("31_k0yo6")
+script = ExtResource("32_8ttln")
+
+[node name="LevelLabel" type="Label" parent="Board/Stats/statbar0"]
+offset_left = 317.1538
+offset_top = -165.74544
+offset_right = 391.37476
+offset_bottom = -98.74544
+theme_override_font_sizes/font_size = 48
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NameLabel" type="Label" parent="Board/Stats/statbar0"]
+offset_left = -400.4068
+offset_top = -164.0368
+offset_right = 241.82965
+offset_bottom = -97.036804
+theme_override_font_sizes/font_size = 48
+
+[node name="Card1" type="TextureRect" parent="Board/Stats/statbar0"]
+material = SubResource("ShaderMaterial_1ls6n")
+offset_left = -178.39905
+offset_top = -47.844086
+offset_right = -85.23511
+offset_bottom = 64.93114
+expand_mode = 1
+
+[node name="Card2" type="TextureRect" parent="Board/Stats/statbar0"]
+offset_left = -57.48413
+offset_top = -47.844086
+offset_right = 35.67987
+offset_bottom = 64.930916
+expand_mode = 1
+
+[node name="Card3" type="TextureRect" parent="Board/Stats/statbar0"]
+offset_left = 67.39514
+offset_top = -47.84407
+offset_right = 160.55914
+offset_bottom = 64.93092
+expand_mode = 1
+
+[node name="Power1" type="TextureButton" parent="Board/Stats/statbar0"]
+offset_left = -168.48795
+offset_top = 83.72708
+offset_right = -79.28842
+offset_bottom = 145.24084
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Power2" type="TextureButton" parent="Board/Stats/statbar0"]
+offset_left = 43.608627
+offset_top = 83.72708
+offset_right = 126.861496
+offset_bottom = 148.6583
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Power3" type="TextureButton" parent="Board/Stats/statbar0"]
+offset_left = -287.42053
+offset_top = 13.669716
+offset_right = -208.13208
+offset_bottom = 76.89219
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Power4" type="TextureButton" parent="Board/Stats/statbar0"]
+offset_left = 202.18561
+offset_top = 11.960979
+offset_right = 287.32013
+offset_bottom = 82.8734
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Power5" type="TextureButton" parent="Board/Stats/statbar0"]
+offset_left = -329.04706
+offset_top = -80.30965
+offset_right = -237.86534
+offset_bottom = -10.252304
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Power6" type="TextureButton" parent="Board/Stats/statbar0"]
+offset_left = 241.82986
+offset_top = -78.60095
+offset_right = 336.976
+offset_bottom = -8.543594
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="RoundLabel" type="Label" parent="Board"]
+offset_left = 2398.5715
+offset_top = 1224.2858
+offset_right = 2725.7146
+offset_bottom = 1474.2856
+theme_override_fonts/font = ExtResource("30_k5qkh")
+theme_override_font_sizes/font_size = 86
+text = "Round:
+10/10"
+script = ExtResource("31_lx2b6")
+
+[node name="FlipSound" type="AudioStreamPlayer" parent="Board"]
+stream = ExtResource("32_lx2b6")
+
+[node name="ChoiceMenu" type="Node2D" parent="."]
+visible = false
+script = ExtResource("36_ek5gj")
+
+[node name="ChoiceBack" type="ColorRect" parent="ChoiceMenu"]
+offset_left = 285.0
+offset_top = 144.0
+offset_right = 1669.0
+offset_bottom = 930.0
+
+[node name="Menuedgeleft" type="Sprite2D" parent="ChoiceMenu/ChoiceBack"]
+position = Vector2(63.5, 756.75)
+scale = Vector2(1.6607946, 2.2029598)
+texture = ExtResource("34_kms6e")
+
+[node name="Menuedgeright" type="Sprite2D" parent="ChoiceMenu/ChoiceBack"]
+position = Vector2(1328, 755)
+scale = Vector2(1.6811723, 2.2569108)
+texture = ExtResource("35_vumgu")
+
+[node name="Menuedgeleft2" type="Sprite2D" parent="ChoiceMenu/ChoiceBack"]
+position = Vector2(1328, 29)
+rotation = 3.1510615
+scale = Vector2(1.6607946, 2.2029457)
+texture = ExtResource("34_kms6e")
+
+[node name="Menuedgeright2" type="Sprite2D" parent="ChoiceMenu/ChoiceBack"]
+position = Vector2(63, 39)
+rotation = -3.1291687
+scale = Vector2(1.6811723, 2.256898)
+texture = ExtResource("35_vumgu")
+
+[node name="Option1" type="TextureButton" parent="ChoiceMenu"]
+offset_left = 345.0
+offset_top = 196.0
+offset_right = 1378.0
+offset_bottom = 407.0
+texture_normal = ExtResource("37_vumgu")
+stretch_mode = 0
+script = ExtResource("38_1ls6n")
+
+[node name="Icon" type="TextureRect" parent="ChoiceMenu/Option1"]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 83.0
+offset_right = 239.0
+offset_bottom = 165.0
+expand_mode = 1
+
+[node name="Label" type="Label" parent="ChoiceMenu/Option1"]
+layout_mode = 0
+offset_left = 297.0
+offset_top = 27.0
+offset_right = 1016.0
+offset_bottom = 181.0
+theme_override_font_sizes/font_size = 32
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="CancelButton" type="TextureButton" parent="ChoiceMenu"]
+offset_left = 1529.0
+offset_top = 181.0
+offset_right = 1617.0
+offset_bottom = 277.0
+texture_normal = ExtResource("38_vumgu")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("39_1ls6n")
+
+[connection signal="pressed" from="Board/RollButton" to="Board" method="_on_roll_button_pressed"]
+[connection signal="pressed" from="Board/RollButton" to="Board/RollButton" method="_on_roll_button_pressed"]
+[connection signal="pressed" from="Board/Cards/Card1" to="Board/Cards/Card1" method="_card_cliked"]
+[connection signal="pressed" from="Board/Cards/Card2" to="Board/Cards/Card2" method="_card_cliked"]
+[connection signal="pressed" from="Board/Cards/Card3" to="Board/Cards/Card3" method="_card_cliked"]
+[connection signal="pressed" from="ChoiceMenu/CancelButton" to="ChoiceMenu/CancelButton" method="_pressed"]

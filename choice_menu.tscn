@@ -1,0 +1,105 @@
+[gd_scene load_steps=3 format=3 uid="uid://dggk5gwtomjlf"]
+
+[ext_resource type="Texture2D" uid="uid://cic2e2wdxm6dt" path="res://textures/choicebar.png" id="1_gdx2c"]
+[ext_resource type="FontFile" uid="uid://e77sgwqcrvek" path="res://LakkiReddy-Regular.ttf" id="3_sxsc4"]
+
+[node name="ChoiceMenu" type="Control"]
+layout_mode = 3
+anchor_right = 1.1800001
+anchor_bottom = 1.3060001
+offset_right = -0.60009766
+offset_bottom = -0.48010254
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1921.0
+offset_bottom = 1082.0
+scale = Vector2(1.5, 1.5)
+mouse_force_pass_scroll_events = false
+
+[node name="choice1" type="TextureButton" parent="Panel"]
+layout_mode = 1
+offset_left = 550.0
+offset_top = 200.0
+offset_right = 1300.0
+offset_bottom = 370.0
+texture_normal = ExtResource("1_gdx2c")
+
+[node name="icon" type="TextureRect" parent="Panel/choice1"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 40.0
+offset_right = 116.0
+offset_bottom = 135.0
+mouse_filter = 2
+expand_mode = 1
+
+[node name="Description" type="RichTextLabel" parent="Panel/choice1"]
+layout_mode = 0
+offset_left = 152.5
+offset_top = 12.0
+offset_right = 682.5
+offset_bottom = 156.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("3_sxsc4")
+scroll_active = false
+
+[node name="choice2" type="TextureButton" parent="Panel"]
+layout_mode = 0
+offset_left = 550.0
+offset_top = 400.0
+offset_right = 1300.0
+offset_bottom = 570.0
+texture_normal = ExtResource("1_gdx2c")
+
+[node name="icon" type="TextureRect" parent="Panel/choice2"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 40.0
+offset_right = 116.0
+offset_bottom = 135.0
+mouse_filter = 2
+expand_mode = 1
+
+[node name="Description" type="RichTextLabel" parent="Panel/choice2"]
+layout_mode = 0
+offset_left = 152.5
+offset_top = 12.0
+offset_right = 682.5
+offset_bottom = 156.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("3_sxsc4")
+scroll_active = false
+
+[node name="choice3" type="TextureButton" parent="Panel"]
+layout_mode = 0
+offset_left = 550.0
+offset_top = 600.0
+offset_right = 1300.0
+offset_bottom = 770.0
+texture_normal = ExtResource("1_gdx2c")
+
+[node name="icon" type="TextureRect" parent="Panel/choice3"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 40.0
+offset_right = 116.0
+offset_bottom = 135.0
+mouse_filter = 2
+expand_mode = 1
+
+[node name="Description" type="RichTextLabel" parent="Panel/choice3"]
+layout_mode = 0
+offset_left = 152.5
+offset_top = 12.0
+offset_right = 682.5
+offset_bottom = 156.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("3_sxsc4")
+scroll_active = false
+
+[connection signal="pressed" from="Panel/choice1" to="Panel" method="_on_pressed"]
+[connection signal="pressed" from="Panel/choice2" to="Panel" method="_on_pressed"]
+[connection signal="pressed" from="Panel/choice3" to="Panel" method="_on_pressed"]

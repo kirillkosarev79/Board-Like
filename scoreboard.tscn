@@ -1,0 +1,419 @@
+[gd_scene load_steps=15 format=3 uid="uid://ost8r4oqwf0o"]
+
+[ext_resource type="Script" uid="uid://bh135fa0j8yb4" path="res://background.gd" id="1_ajmlx"]
+[ext_resource type="Texture2D" uid="uid://c7dmgo6pxcq28" path="res://textures/minicup.png" id="2_bq161"]
+[ext_resource type="Script" uid="uid://dml3cbhpny3j0" path="res://minidice.gd" id="3_6dngh"]
+[ext_resource type="Script" uid="uid://bgmj6mkx4s3fn" path="res://results.gd" id="4_v5tur"]
+[ext_resource type="Texture2D" uid="uid://cbgpgamuw8ufm" path="res://textures/menuedgeleft.png" id="5_j22kf"]
+[ext_resource type="Texture2D" uid="uid://sjgcn704863i" path="res://textures/menuedgeright.png" id="6_5d6qc"]
+[ext_resource type="FontFile" uid="uid://e77sgwqcrvek" path="res://LakkiReddy-Regular.ttf" id="7_bq161"]
+[ext_resource type="Texture2D" uid="uid://bkxmw8dgt8rhx" path="res://textures/crown.png" id="8_6dngh"]
+[ext_resource type="Script" uid="uid://nusa2dsrvvq6" path="res://mmbutton.gd" id="9_v5tur"]
+[ext_resource type="AudioStream" uid="uid://b4lvc2whw7ovf" path="res://Sounds/mainmenumusic.wav" id="10_j22kf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bq161"]
+bg_color = Color(0.7892118, 0.58380824, 0.020040104, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+shadow_size = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6dngh"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j22kf"]
+bg_color = Color(0.7679101, 0.5576345, 0.15864825, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_top = 40.0
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5d6qc"]
+bg_color = Color(0.5964644, 0.4281065, 0.108048014, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_top = 40.0
+shadow_size = 5
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.96500003
+offset_bottom = 37.799927
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2858076, 0.28832293, 1, 1)
+script = ExtResource("1_ajmlx")
+
+[node name="Minidice" type="Sprite2D" parent="Background"]
+position = Vector2(103, 109)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice2" type="Sprite2D" parent="Background"]
+position = Vector2(247, 305)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice3" type="Sprite2D" parent="Background"]
+position = Vector2(674, 466)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice4" type="Sprite2D" parent="Background"]
+position = Vector2(175, 917)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice5" type="Sprite2D" parent="Background"]
+position = Vector2(520, 980)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice6" type="Sprite2D" parent="Background"]
+position = Vector2(931, 588)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice7" type="Sprite2D" parent="Background"]
+position = Vector2(458, 682)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice8" type="Sprite2D" parent="Background"]
+position = Vector2(1236, 396)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice9" type="Sprite2D" parent="Background"]
+position = Vector2(1192, 980)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice10" type="Sprite2D" parent="Background"]
+position = Vector2(1280, 607)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice11" type="Sprite2D" parent="Background"]
+position = Vector2(684, 682)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice12" type="Sprite2D" parent="Background"]
+position = Vector2(392, 491)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice13" type="Sprite2D" parent="Background"]
+position = Vector2(1493, 525)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice14" type="Sprite2D" parent="Background"]
+position = Vector2(1622, 127)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice15" type="Sprite2D" parent="Background"]
+texture_filter = 1
+position = Vector2(1807, 258)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice16" type="Sprite2D" parent="Background"]
+position = Vector2(1773, 936)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice17" type="Sprite2D" parent="Background"]
+position = Vector2(414, 839)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice18" type="Sprite2D" parent="Background"]
+position = Vector2(1186, 792)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice19" type="Sprite2D" parent="Background"]
+position = Vector2(834, 1030)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice20" type="Sprite2D" parent="Background"]
+position = Vector2(953, 353)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice21" type="Sprite2D" parent="Background"]
+position = Vector2(81, 739)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice22" type="Sprite2D" parent="Background"]
+position = Vector2(624, 315)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice23" type="Sprite2D" parent="Background"]
+position = Vector2(294, 1024)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice24" type="Sprite2D" parent="Background"]
+position = Vector2(68, 445)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice25" type="Sprite2D" parent="Background"]
+position = Vector2(618, 865)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice26" type="Sprite2D" parent="Background"]
+position = Vector2(266, 779)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice27" type="Sprite2D" parent="Background"]
+position = Vector2(1794, 81)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice28" type="Sprite2D" parent="Background"]
+position = Vector2(1682, 798)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice29" type="Sprite2D" parent="Background"]
+position = Vector2(1098, 515)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice30" type="Sprite2D" parent="Background"]
+position = Vector2(1083, 279)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice31" type="Sprite2D" parent="Background"]
+position = Vector2(396, 300)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice32" type="Sprite2D" parent="Background"]
+position = Vector2(816, 269)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice33" type="Sprite2D" parent="Background"]
+position = Vector2(408, 20)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice34" type="Sprite2D" parent="Background"]
+position = Vector2(1275, 15)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice35" type="Sprite2D" parent="Background"]
+position = Vector2(1041, 165)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice36" type="Sprite2D" parent="Background"]
+position = Vector2(624, 121)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice37" type="Sprite2D" parent="Background"]
+position = Vector2(652, 219)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice38" type="Sprite2D" parent="Background"]
+position = Vector2(1340, 468)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice39" type="Sprite2D" parent="Background"]
+position = Vector2(1456, 680)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice40" type="Sprite2D" parent="Background"]
+position = Vector2(881, 768)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice41" type="Sprite2D" parent="Background"]
+position = Vector2(1346, 151)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice42" type="Sprite2D" parent="Background"]
+position = Vector2(1423, 269)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice43" type="Sprite2D" parent="Background"]
+position = Vector2(1822, 384)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice44" type="Sprite2D" parent="Background"]
+position = Vector2(1867, 648)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice45" type="Sprite2D" parent="Background"]
+position = Vector2(1475, 851)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Minidice46" type="Sprite2D" parent="Background"]
+position = Vector2(1597, 1022)
+texture = ExtResource("2_bq161")
+script = ExtResource("3_6dngh")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.019000001
+offset_left = 623.0
+offset_top = 118.0
+offset_right = 1297.0
+offset_bottom = 907.48
+theme_override_styles/panel = SubResource("StyleBoxFlat_bq161")
+script = ExtResource("4_v5tur")
+
+[node name="Menuedgeleft" type="Sprite2D" parent="Panel"]
+position = Vector2(63.499996, 769.75)
+scale = Vector2(1.6607946, 2.2029598)
+texture = ExtResource("5_j22kf")
+
+[node name="Menuedgeright" type="Sprite2D" parent="Panel"]
+position = Vector2(620.99994, 771)
+scale = Vector2(1.6811723, 2.2569108)
+texture = ExtResource("6_5d6qc")
+
+[node name="Menuedgeleft2" type="Sprite2D" parent="Panel"]
+position = Vector2(618.99994, 30)
+rotation = -3.1321237
+scale = Vector2(1.6607947, 2.2029457)
+texture = ExtResource("5_j22kf")
+
+[node name="Menuedgeright2" type="Sprite2D" parent="Panel"]
+position = Vector2(64, 30)
+rotation = -3.1291687
+scale = Vector2(1.6811723, 2.256898)
+texture = ExtResource("6_5d6qc")
+
+[node name="Score" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 197.0
+offset_right = 580.0
+offset_bottom = 289.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6dngh")
+
+[node name="Nickname" type="Label" parent="Panel/Score"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 21.0
+offset_right = 387.0
+offset_bottom = 76.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+
+[node name="Level" type="Label" parent="Panel/Score"]
+layout_mode = 0
+offset_left = 414.0
+offset_top = 20.0
+offset_right = 477.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Nicknames" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 140.0
+offset_right = 364.0
+offset_bottom = 195.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_bq161")
+theme_override_font_sizes/font_size = 32
+text = "Nickname"
+
+[node name="Levels" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 492.0
+offset_top = 141.0
+offset_right = 713.0
+offset_bottom = 196.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_bq161")
+theme_override_font_sizes/font_size = 32
+text = "Level"
+
+[node name="Crown" type="Sprite2D" parent="."]
+position = Vector2(674.625, 362.75)
+scale = Vector2(0.40375006, 0.3924999)
+texture = ExtResource("8_6dngh")
+
+[node name="Main Menu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 774.0
+offset_top = 878.0
+offset_right = 1151.0
+offset_bottom = 968.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("7_bq161")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_j22kf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5d6qc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j22kf")
+text = "MAIN MENU"
+script = ExtResource("9_v5tur")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_j22kf")
+autoplay = true

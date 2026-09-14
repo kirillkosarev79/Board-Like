@@ -1,0 +1,164 @@
+[gd_scene load_steps=17 format=3 uid="uid://c05ffauq0okle"]
+
+[ext_resource type="Script" uid="uid://drp4fqqlppjsu" path="res://Board.gd" id="1_3ng4l"]
+[ext_resource type="Script" uid="uid://bdos5q2hgf8hm" path="res://tilesize.gd" id="2_k0g80"]
+[ext_resource type="Texture2D" uid="uid://bgwjv7odiymu7" path="res://spites/dog/dog0.png" id="3_vewne"]
+[ext_resource type="Script" uid="uid://dc6aas1ms7rpj" path="res://tiles.gd" id="4_36lgi"]
+[ext_resource type="Texture2D" uid="uid://1xbo5rc8j6tv" path="res://spites/dog/dog1.png" id="4_dek7v"]
+[ext_resource type="Texture2D" uid="uid://dfxngstsismrq" path="res://spites/RollButtonPressed.png" id="5_6pldg"]
+[ext_resource type="Texture2D" uid="uid://d17w645hu6p5x" path="res://spites/RollButton.png" id="5_grdf5"]
+[ext_resource type="Texture2D" uid="uid://lhmbhwmli8tc" path="res://spites/tiles/final tile.png" id="5_k0g80"]
+[ext_resource type="Texture2D" uid="uid://w5s6w4ruqevw" path="res://spites/dog/dog2.png" id="5_r24ay"]
+[ext_resource type="Script" uid="uid://yrg3ng0n7ag2" path="res://player.gd" id="7_6sufv"]
+[ext_resource type="Script" uid="uid://b0u6ok6scsf43" path="res://roll_button.gd" id="7_vewne"]
+[ext_resource type="AudioStream" uid="uid://kng1irqavbvq" path="res://Sounds/RullButtonSound.mp3" id="9_ys3rr"]
+[ext_resource type="Texture2D" uid="uid://buwa6ii2g8130" path="res://spites/Board.png" id="11_r24ay"]
+
+[sub_resource type="Animation" id="Animation_ys3rr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_vewne")]
+}
+
+[sub_resource type="Animation" id="Animation_vewne"]
+resource_name = "walk"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.13333334, 0.23333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_vewne"), ExtResource("4_dek7v"), ExtResource("5_r24ay")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dek7v"]
+_data = {
+&"RESET": SubResource("Animation_ys3rr"),
+&"walk": SubResource("Animation_vewne")
+}
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_r24ay")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Board" type="Node2D" parent="."]
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_3ng4l")
+
+[node name="Tiles" type="Node2D" parent="Board"]
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("2_k0g80")
+
+[node name="Tile1" type="Sprite2D" parent="Board/Tiles"]
+texture_filter = 2
+position = Vector2(499.99997, 599.99994)
+scale = Vector2(0.99999994, 0.99999994)
+region_rect = Rect2(0, 0, 64, 128)
+script = ExtResource("4_36lgi")
+
+[node name="Tile2" type="Sprite2D" parent="Board/Tiles"]
+position = Vector2(699.99994, 599.99994)
+script = ExtResource("4_36lgi")
+
+[node name="Tile3" type="Sprite2D" parent="Board/Tiles"]
+position = Vector2(899.99994, 599.99994)
+script = ExtResource("4_36lgi")
+
+[node name="Tile4" type="Sprite2D" parent="Board/Tiles"]
+position = Vector2(1099.9999, 599.99994)
+script = ExtResource("4_36lgi")
+
+[node name="Tile5" type="Sprite2D" parent="Board/Tiles"]
+position = Vector2(1299.9999, 599.99994)
+script = ExtResource("4_36lgi")
+
+[node name="Tile6" type="Sprite2D" parent="Board/Tiles"]
+position = Vector2(1499.9999, 599.99994)
+script = ExtResource("4_36lgi")
+
+[node name="Tile7" type="Sprite2D" parent="Board/Tiles"]
+position = Vector2(1699.9999, 599.99994)
+script = ExtResource("4_36lgi")
+
+[node name="Tile8" type="Sprite2D" parent="Board/Tiles"]
+position = Vector2(1899.9999, 599.99994)
+script = ExtResource("4_36lgi")
+
+[node name="Tile9" type="Sprite2D" parent="Board/Tiles"]
+position = Vector2(2099.9998, 599.99994)
+script = ExtResource("4_36lgi")
+
+[node name="DiceLabel" type="Label" parent="Board"]
+offset_left = 1005.71423
+offset_top = 788.5715
+offset_right = 1203.8096
+offset_bottom = 845.71436
+scale = Vector2(3, 3)
+text = "Roll: ?"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="FinalTile" type="Sprite2D" parent="Board"]
+position = Vector2(2299.9998, 599.99994)
+scale = Vector2(3, 3)
+texture = ExtResource("5_k0g80")
+
+[node name="Player" type="Sprite2D" parent="Board"]
+position = Vector2(299.99997, 599.99994)
+scale = Vector2(1.4999999, 1.4999999)
+texture = ExtResource("3_vewne")
+script = ExtResource("7_6sufv")
+level = null
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Board/Player"]
+libraries = {
+&"": SubResource("AnimationLibrary_dek7v")
+}
+
+[node name="Level" type="Label" parent="Board/Player"]
+offset_left = -9.523775
+offset_top = -87.61899
+offset_right = 89.52385
+offset_bottom = -19.047546
+scale = Vector2(2, 2)
+text = "0"
+
+[node name="RollButton" type="TextureButton" parent="Board"]
+offset_left = 1748.5715
+offset_top = 834.2857
+offset_right = 2205.7144
+offset_bottom = 1257.1428
+texture_normal = ExtResource("5_grdf5")
+texture_pressed = ExtResource("5_6pldg")
+stretch_mode = 5
+script = ExtResource("7_vewne")
+
+[node name="RollButtonPressed" type="AudioStreamPlayer" parent="Board/RollButton"]
+stream = ExtResource("9_ys3rr")
+
+[connection signal="pressed" from="Board/RollButton" to="Board" method="_on_roll_button_pressed"]
+[connection signal="pressed" from="Board/RollButton" to="Board/RollButton" method="_on_roll_button_pressed"]
