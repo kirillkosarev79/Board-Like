@@ -24,7 +24,7 @@ Tooltip
 
 <img width="385" height="240" alt="image" src="https://github.com/user-attachments/assets/e6c28628-04f9-45f0-b4a4-3a2dd1a305c0" />
 
-Point to any tile, card or power-up to see it's name and effect!
+Point to any tile, card or power-up with your mouse to see it's name and effect!
 
 
 Cards
